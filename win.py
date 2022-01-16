@@ -7,7 +7,7 @@ min_fps = 10
 min_colors = 40
 min_dimension = 160
 
-limit_size = 1000000
+limit_size = 16 * 1024 * 1024
 
 # FUNCTIONS DEFINATION
 # Get the width of the clip.
@@ -61,7 +61,7 @@ def showOrigInfo(width, height, framesCount, fps, duration, colors, size):
     print('  Dimension: %d * %d' % (width, height))
     print('  Frames Count: %(fr)d (%(fps)d fps *  %(du).2f s)' %
           {'fr': framesCount, 'fps': fps, 'du': duration})
-    print('  File Size: %d KB\n' % (size / 1000))
+    print('  File Size: %d KB\n' % (size / 1024))
 
 # Show the changes after compression.
 
@@ -76,7 +76,7 @@ def showChangedInfo(width, height, framesCount, fps, duration, colors, size,
            'curr_fr': framesCount, 'curr_fps': fps, 'curr_du': duration})
     print('  Colors Count: %d' % colors)
     print('  Size: %(orig)d KB -> %(curr)d KB\n' %
-          {'orig': (orig_size / 1000), 'curr': (size / 1000)})
+          {'orig': (orig_size / 1024), 'curr': (size / 1024)})
 
 
 # Compress the clip.
